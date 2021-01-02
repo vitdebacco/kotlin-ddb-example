@@ -1,0 +1,81 @@
+{
+  "Coffee": [
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#counter-culture-coffee"},
+          "SortKey": {"S": "OFFERING#iridescent"},
+          "GSI1PartitionKey": {"S": "ORIGIN#various"},
+          "GSI1SortKey": {"S": "ROASTER#counter-culture-coffee|OFFERING#iridescent"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "iridescent"},
+          "Name": {"S": "Iridescent"},
+          "Origin": {"S": "Various"},
+          "Description": {"S": "Each year, we donate $1 per pound from our Iridescent winter blend to fund transformative projects in coffee origins. The money raised from Iridescent will go toward deepening our Seeds fund—a program that awards grants to producer-driven sustainability projects. Because good work, good cheer, and great coffee is more than just a winter theme."},
+          "TastingNotes": {"SS": ["Berry", "Chocolate", "Sweet"]},
+          "Price": {"S": "18.25"},
+          "Url": {"S": "https://counterculturecoffee.com/shop/coffee/iridescent"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "roast_level": {"S": "75"},
+            "blend_components": {"S": "60% Huista, Guatemala / 30% Cherbanta Natural, Ethiopia / 10% Mutero, Kenya"},
+            "process": {"S": "washed"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#counter-culture-coffee"},
+          "SortKey": {"S": "OFFERING#abel-salinas"},
+          "GSI1PartitionKey": {"S": "ORIGIN#ecuador"},
+          "GSI1SortKey": {"S": "ROASTER#counter-culture-coffee|OFFERING#abel-salinas"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "abel-salinas"},
+          "Name": {"S": "Abel Salinas"},
+          "Origin": {"S": "Saraguro, Ecuador"},
+          "Description": {"S": "Abel Salinas’s farm is located in Saraguro, a canton in southern Ecuador that has recently become famous for producing some of the highest-quality coffees in the country. Inspired by his neighbors’ successes, Abel planted coffee on a small plot of land four years ago. Last year, the very first harvest from Abel Salinas’ farm took top honors at a local cupping competition. We were lucky to buy a small amount of that coffee last year and we didn’t hesitate to contract more this season. This year’s lot boasts honey-like sweetness, nectarine fruit complexity, and a soft floral finish."},
+          "TastingNotes": {"SS": ["Honey", "Nectarine", "Floral"]},
+          "Price": {"S": "26.00"},
+          "Url": {"S": "https://counterculturecoffee.com/shop/coffee/abel-salinas"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "roast_level": {"S": "78"},
+            "varieties": {"S": "Typica Mejorado"},
+            "elevation": {"S": "1924 meters"},
+            "process": {"S": "washed"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#counter-culture-coffee"},
+          "SortKey": {"S": "OFFERING#muda"},
+          "GSI1PartitionKey": {"S": "ORIGIN#ethiopia"},
+          "GSI1SortKey": {"S": "ROASTER#counter-culture-coffee|OFFERING#muda"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "muda"},
+          "Name": {"S": "Muda"},
+          "Origin": {"S": "Uraga, Ethiopia"},
+          "Description": {"S": "Located in the eastern reaches of the Guji zone of Ethiopia, the village of Harso Haro Muda is home to a privately-owned coffee washing station. More than 2,000 smallholder coffee farmers from the surrounding area deliver their freshly-picked coffee cherries here. The combination of relatively young coffee trees, excellent varieties, high elevation, and very ripe coffee cherry picking practices result in this distinct coffee. We taste notes of lime, vibrant florals, and dark honey."},
+          "TastingNotes": {"SS": ["Lime", "Floral", "Dark Honey"]},
+          "Price": {"S": "19.00"},
+          "Url": {"S": "https://counterculturecoffee.com/shop/coffee/muda"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "roast_level": {"S": "80"},
+            "varieties": {"S": "Kudhumi, Walichu, Miqe, Birbirsa, 74110, and 74112"},
+            "elevation": {"S": "2050–2340 meters"},
+            "process": {"S": "washed"}
+          }}
+        }
+      }
+    }
+  ]
+}

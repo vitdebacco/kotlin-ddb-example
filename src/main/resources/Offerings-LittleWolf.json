@@ -1,0 +1,135 @@
+{
+  "Coffee": [
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
+          "SortKey": {"S": "OFFERING#companion-blend"},
+          "GSI1PartitionKey": {"S": "ORIGIN#various"},
+          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#companion-blend"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "companion-blend"},
+          "Name": {"S": "Companion Blend"},
+          "Origin": {"S": "Various"},
+          "Description": {"S": "Our Companion Blend is a seasonal blend intended to be enjoyed, like all of our coffees, as both espresso and drip. The components of our blend change seasonally to include the freshest coffees possible, always featuring two coffees that are \"companions\"; similar but different enough to come together and make something more than the sum of their parts. \n\nNo matter what the current components are, we think you'll find this coffee to be the perfect companion to your morning routine, whatever it may be. \n\n*Coffees are roasted every Monday and shipped Tuesday."},
+          "TastingNotes": {"SS": ["Berry", "Chocolate", "Creamy"]},
+          "Price": {"S": "12.00"},
+          "Url": {"S": "https://littlewolf.coffee/collections/shop/products/companion"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "current_components": {"S": "Current Components: 60% Washed Colombia - Laboyano, 40% Natural Ethiopia - Sidama Dur Feres"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
+          "SortKey": {"S": "OFFERING#la-pradera-gesha"},
+          "GSI1PartitionKey": {"S": "ORIGIN#colombia"},
+          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#la-pradera-gesha"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "la-pradera-gesha"},
+          "Name": {"S": "La Pradera - Gesha"},
+          "Origin": {"S": "Colombia"},
+          "Description": {"S": "This is a new and exclusive relationship for us, two years in the making, and we could not be more excited! We met Enrique during our first trip to Colombia in 2019 and were immediately taken by his meticulous processing but came to find he is also growing some really exciting varietals to go with that meticulous processing. \n\n \n\nThis Gesha is the lot that originally turned us on to Enrique. During our first trip to Colombia, Enrique showed up to the buying station in Huila with a tiny sample of Gesha from his farm as farmer's often do. Stephen at Coffee Quest quickly milled and roasted the coffee along with hundreds of other samples and the next day we returned to cup his samples. Needless to say this sample exploded off the sample and was the favorite coffee of the entire trip. Because of this, we changed all of our plans and headed out to see Enrique's farm to see where the magic was happening. \n\nAt the farm it turned out he was actively processing more Gesha so we had the pleasure of watching as he meticulously monitored the temperature of the fermentation, agitating it frequently and adding fresh, clean, cold water to keep the fermentation temperature down. through a makeshift watering can of water bottles with holes poked through them (see the photo below).\n\nThat was all we needed to see as we were ready to purchase that Gesha right there and then from him. Unfortunately there was only 1kg available that year but we bought it directly from him and personally enjoyed it as we waited all year for this full size lot to be ready. \n\nWe hope you enjoy it as much as we do. Gesha is weird, Gesha is special and Gesha is often overhyped but this coffee - this Gesha - is legitimately one of the best lots we've personally had the pleasure of drinking anywhere (and we genuinely do not say that ever)."},
+          "TastingNotes": {"SS": ["Apricot", "Bergamot", "Juicy"]},
+          "Price": {"S": "23.00"},
+          "Url": {"S": "https://littlewolf.coffee/collections/shop/products/la-pradera-gesha"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "process": {"S": "washed"},
+            "farm": {"S": "La Pradera"},
+            "elevation": {"S": "1900m"},
+            "varietal": {"S": "Gesha"},
+            "sourced_by": {"S": "Coffee Quest"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
+          "SortKey": {"S": "OFFERING#demeka-becha-honey"},
+          "GSI1PartitionKey": {"S": "ORIGIN#ethiopia"},
+          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#demeka-becha-honey"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "demeka-becha-honey"},
+          "Name": {"S": "Demeka Becha - Honey"},
+          "Origin": {"S": "Ethiopia"},
+          "Description": {"S": "From our importer:\n\n\"Demeka Becha site is situated at the top of a hill, which is ideal for air flow along the\ndrying beds. You enter through tin gates which open onto lush green grass and, if you’re lucky, smiling day laborers lined up clapping and whistling their excitement at your visit. \n\nThe Demeka Becha site is owned by Ayele Tulu, a Sidama man who is deeply\nintegrated into the local area of Bona Zuria where he has a few sites. His son Tsegab Ayele, who speaks fluent English and is eagerly involved with coffee culture globally through social media, is his right hand and manages the project. Tsegab’s younger brother Abinet (still in college but clearly on route to joining the family business) is responsible for photography and making sure that his dad has a chair and is comfortable.\n\nDemeka Becha site pulls cherries from nearby communities including Dilla Suke, Demeka, Goacho, Becha, and Bashiro Dale—close to 10,000 producers are situated in the areas  surrounding the washing station. The situation of the site Producers bring their cherries to be weighed on the characteristic blue scale, logged in the book by Cashier and General Manager, Alemu Gobaro, and floated before being dumped into the cement hopper to begin the journey through the 4-disk Agard pulper and into fermentation tanks and cement washing channels. There are 10 tanks for density grades 1 and 2, and 2 tanks for low density coffee destined for our Community Lot program if it meets our standard, or for the local market. Following fermentation and washing, the parchment coffee is carried by hand to the drying beds where laborers spread it out to the depth of a fingertip and keep it turning until it is dried and moved to the locked storehouse to await trucking to Addis Ababa and final processing.\""},
+          "TastingNotes": {"SS": ["Peach", "Lavender", "Sparkling"]},
+          "Price": {"S": "13.00"},
+          "Url": {"S": "https://littlewolf.coffee/collections/shop/products/demeka-becha-honey"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "process": {"S": "honey"},
+            "farm": {"S": "Demeka Becha"},
+            "elevation": {"S": "2100-2200m"},
+            "varietal": {"S": "Ethiopia Landraces"},
+            "sourced_by": {"S": "Catalyst Coffee"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
+          "SortKey": {"S": "OFFERING#oropel"},
+          "GSI1PartitionKey": {"S": "ORIGIN#peru"},
+          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#oropel"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "oropel"},
+          "Name": {"S": "Oropel"},
+          "Origin": {"S": "Peru - Satipo"},
+          "Description": {"S": ""},
+          "TastingNotes": {"SS": ["Orange", "Butterscotch", "Balanced"]},
+          "Price": {"S": "12.50"},
+          "Url": {"S": "https://littlewolf.coffee/collections/shop/products/oropel"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "process": {"S": "washed"},
+            "farm": {"S": "Oropel"},
+            "elevation": {"S": "2192m"},
+            "varietal": {"S": "Typica, Pache"},
+            "sourced_by": {"S": "Red Fox"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
+          "SortKey": {"S": "OFFERING#lugmpata-honey"},
+          "GSI1PartitionKey": {"S": "ORIGIN#ecuador"},
+          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#lugmpata-honey"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "lugmpata-honey"},
+          "Name": {"S": "Lugmpata - Honey"},
+          "Origin": {"S": "Ecuador"},
+          "Description": {"S": "An exclusively processed lot for us every year and always one of our favorites"},
+          "TastingNotes": {"SS": ["Mango", "Caramel", "Complex"]},
+          "Price": {"S": "15.00"},
+          "Url": {"S": "https://littlewolf.coffee/collections/shop/products/lugmpata-honey"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "process": {"S": "honey"},
+            "producer": {"S": "Lugmapata"},
+            "elevation": {"S": "2000m"},
+            "varietal": {"S": "Bourbon Sidra"},
+            "sourced_by": {"S": "Coffee Quest"}
+          }}
+        }
+      }
+    }
+  ]
+}

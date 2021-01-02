@@ -1,0 +1,57 @@
+{
+  "TableName": "Coffee",
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "PartitionKey",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "SortKey",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "GSI1PartitionKey",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "GSI1SortKey",
+      "AttributeType": "S"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "PartitionKey",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "SortKey",
+      "KeyType": "RANGE"
+    }
+  ],
+  "ProvisionedThroughput": {
+    "WriteCapacityUnits": 5,
+    "ReadCapacityUnits": 5
+  },
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "GSI1",
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "ProvisionedThroughput": {
+        "WriteCapacityUnits": 5,
+        "ReadCapacityUnits": 5
+      },
+      "KeySchema": [
+        {
+          "AttributeName": "GSI1PartitionKey",
+          "KeyType": "HASH"
+        },
+        {
+          "AttributeName": "GSI1SortKey",
+          "KeyType": "RANGE"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "Coffee": [
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#counter-culture-coffee"},
+          "SortKey": {"S": "#INFO"},
+          "ItemType": {"S": "Roaster"},
+          "Id": {"S": "counter-culture-coffee"},
+          "Name": {"S": "Counter Culture Coffee"},
+          "Url": {"S": "https://counterculturecoffee.com/"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
+          "SortKey": {"S": "#INFO"},
+          "ItemType": {"S": "Roaster"},
+          "Id": {"S": "little-wolf-coffee"},
+          "Name": {"S": "Little Wolf Coffee"},
+          "Url": {"S": "https://littlewolf.coffee/"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#little-waves-coffee"},
+          "SortKey": {"S": "#INFO"},
+          "ItemType": {"S": "Roaster"},
+          "Id": {"S": "little-waves-coffee"},
+          "Name": {"S": "Little Waves Coffee Roasters"},
+          "Url": {"S": "https://littlewaves.coffee/"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#olympia-coffee"},
+          "SortKey": {"S": "#INFO"},
+          "ItemType": {"S": "Roaster"},
+          "Id": {"S": "olympia-coffee"},
+          "Name": {"S": "Olympia Coffee"},
+          "Url": {"S": "https://www.olympiacoffee.com/"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#madcap-coffee"},
+          "SortKey": {"S": "#INFO"},
+          "ItemType": {"S": "Roaster"},
+          "Id": {"S": "madcap-coffee"},
+          "Name": {"S": "Madcap Coffee Company"},
+          "Url": {"S": "https://madcapcoffee.com/"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
+          "SortKey": {"S": "#INFO"},
+          "ItemType": {"S": "Roaster"},
+          "Id": {"S": "george-howell-coffee"},
+          "Name": {"S": "George Howell Coffee"},
+          "Url": {"S": "https://store.georgehowellcoffee.com/"},
+          "Status": {"S": "disabled"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#scratch-living"},
+          "SortKey": {"S": "#INFO"},
+          "ItemType": {"S": "Roaster"},
+          "Id": {"S": "scratch-living"},
+          "Name": {"S": "Scratch Living"},
+          "Url": {"S": "https://www.fromscratchliving.com/"},
+          "Status": {"S": "development"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"}
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "Coffee": [
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
+          "SortKey": {"S": "OFFERING#yukro-cooperative-ethiopia"},
+          "GSI1PartitionKey": {"S": "ORIGIN#ethiopia"},
+          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#yukro-cooperative-ethiopia"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "yukro-cooperative-ethiopia"},
+          "Name": {"S": "Yukro Co-Op"},
+          "Origin": {"S": "Ethiopia"},
+          "Description": {"S": "The best Jimma washed coffees have a syrupy heavier body than other washed Ethiopian coffees. Yukro, a small cooperative established in 2010, has stood out for its quality. The co-op members harvest from the forest around them and from plantings. They carefully soak the ripe beans in very clean spring water, after demucilaging, to extract the maximum clarity and sweetness of flavor.\n\nTechnoServe, an NGO, is working directly with the Yukro Cooperative and other cooperatives in the region as a coordinator between agronomists and managers, as well as a business adviser to help the cooperatives manage their debts, re-invest in quality improvements at the mills, and verify distribution of income to all members. The achievements of the Ethiopian farmer communities with the assistance of TechnoServe seem monumental to me. From producers of run-of-mill commercial coffee of little worth they have catapulted to being the highest quality producers in Ethiopia, in my opinion."},
+          "TastingNotes": {"SS": ["Lilac", "Peach", "Raw Sugar"]},
+          "Price": {"S": "22.00"},
+          "Url": {"S": "https://store.georgehowellcoffee.com/coffees/yukro-cooperative-ethiopia.html"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "country":{"S": "Ethiopia"},
+            "region": {"S": "Agaro, Jimma"},
+            "farm":	{"S": "Yukro"},
+            "farm_size": {"S": "Avg of 3.7 acres per farm"},
+            "number_of_farmers": {"S": "206 member farmers, 41 female"},
+            "altitude":	{"S": "6,200 - 6,900 ft."},
+            "varietals": {"S": "Native Landraces"},
+            "harvest":	{"S": "November- December 2019"},
+            "rainfall":	{"S": "Approximately 60 inches annually"},
+            "soil":	{"S": "Deep red clay & volcanic loam."},
+            "production_method": {"S": "washed"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
+          "SortKey": {"S": "OFFERING#gesha-village"},
+          "GSI1PartitionKey": {"S": "ORIGIN#ethiopia"},
+          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#gesha-village"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "gesha-village"},
+          "Name": {"S": "Gesha Village Estate"},
+          "Origin": {"S": "Ethiopia"},
+          "Description": {"S": "Gesha Village Estate started in 2011. It is located just a few miles from the Gesha variety’s birthplace in the Gori Gesha forest, near the Sudan-Ethiopia border. The lot we are offering is 100% “Gesha 1931” variety – closely resembling the famed Panamanian Gesha in plant morphology, bean shape and size, as well as cup profile.\n\nThe natural processed micro-lot we chose took us by storm for its complexity and clarity. Here is a natural processed Gesha that allows all the delicate varietal and terroir notes to sing, unimpeded. Such subtlety and nuance in a natural is very rare, in our experience. We believe this delicate balance is due to an unusually prolonged intensely dry harvest season, allowing the enveloping fruit to dry with a minimum of microbiotic ferment. The natural processing coats the coffee with a gentle translucent glaze of fruit-tinged butterscotch."},
+          "TastingNotes": {"SS": ["Jasmine", "Tangerine", "Pomegranate"]},
+          "Price": {"S": ""},
+          "Url": {"S": "https://store.georgehowellcoffee.com/coffees/gesha-village.html"},
+          "Status": {"S": "disabled"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "country":{"S": "Ethiopia"},
+            "region": {"S": "Bench Maji"},
+            "altitude":	{"S": "6,260 - 6800 ft"},
+            "varietals": {"S": "Gesha 1931"},
+            "harvest":	{"S": "December 2017"},
+            "production_method": {"S": "natural"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
+          "SortKey": {"S": "OFFERING#el-injerto-gesha"},
+          "GSI1PartitionKey": {"S": "ORIGIN#guatemala"},
+          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#el-injerto-gesha"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "el-injerto-gesha"},
+          "Name": {"S": "El Injerto Gesha"},
+          "Origin": {"S": "Guatemala"},
+          "Description": {"S": "El Injerto is Guatemala’s most famed coffee farm for sustained Grand Cru quality. This Gesha was harvested on a single day at peak ripeness and processed meticulously right through drying. The result is a champagne-like Gesha! It positively sparkles.\n\nHuehuetenango is a spectacular region of steep, sharp-toothed mountains and narrow valleys. Warm winds from the hot Isthmus of Tehuantepec, Mexico, to the north, flow through narrow north-south valleys, warming the mountainsides and allowing coffee growth at far higher altitudes than would ordinarily be possible for such northern latitudes.\n\nEl Injerto has justly become legendary for the quality of its coffees, winning far more Presidential Cup of Excellence Awards than any other farm in any country. With each year the Aguirres improve their farm in quality production, social development and environmental preservation."},
+          "TastingNotes": {"SS": ["Bergamot", "Lemongrass", "Jasmine"]},
+          "Price": {"S": ""},
+          "Url": {"S": "https://store.georgehowellcoffee.com/coffees/el-injerto-gesha.html"},
+          "Status": {"S": "disabled"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "country":{"S": "Guatemala"},
+            "region": {"S": "Huehuetenango"},
+            "producer": {"S": "Arturo Aguirre Sr. and Arturo Aguirre Jr."},
+            "farm":	{"S": "El Injerto"},
+            "altitude":	{"S": "5,900 ft."},
+            "varietals": {"S": "Gesha"},
+            "harvest":	{"S": "March 25, 2018"},
+            "production_method": {"S": "traditional washed"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
+          "SortKey": {"S": "OFFERING#piedras-de-afilar-gesha"},
+          "GSI1PartitionKey": {"S": "ORIGIN#colombia"},
+          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#piedras-de-afilar-gesha"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "piedras-de-afilar-gesha"},
+          "Name": {"S": "Piedras de Afilar Gesha"},
+          "Origin": {"S": "Colombia"},
+          "Description": {"S": "Jeremias Lasso received Gesha seeds from the famed Panamanian Gesha-producing farm La Esmeralda in 2009. This lot is his first full harvest. Jeremias stands out as one of the most knowledgeable farmers in his area with sensitivity to his environment. We find this an exceptional value coffee with an underlying crisp Earl Grey flavor."},
+          "TastingNotes": {"SS": ["Nectarine", "Lime", "Passionfruit"]},
+          "Price": {"S": ""},
+          "Url": {"S": "https://store.georgehowellcoffee.com/coffees/piedras-de-afilar-gesha.html"},
+          "Status": {"S": "disabled"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "country":{"S": "Colombia"},
+            "region": {"S": "Buenos Aires de Cartago, Nariño"},
+            "producer": {"S": "Jerimias Lasso"},
+            "farm":	{"S": "Piedras de Afilar, El Naranjo section"},
+            "altitude":	{"S": "6,135 - 6,235 ft."},
+            "varietals": {"S": "Gesha"},
+            "harvest":	{"S": "July 2018"},
+            "production_method": {"S": "traditional washed"}
+          }}
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
+          "SortKey": {"S": "OFFERING#matalapa-el-salvador"},
+          "GSI1PartitionKey": {"S": "ORIGIN#el-salvador"},
+          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#matalapa-el-salvador"},
+          "ItemType": {"S": "Offering"},
+          "Id": {"S": "matalapa-el-salvador"},
+          "Name": {"S": "Matalapa"},
+          "Origin": {"S": "El Salvador"},
+          "Description": {"S": "The steep slopes of Matalapa face the Pacific Ocean, to the south, which provides afternoon mists helpful in maintaining moisture for the coffee trees.\n\nMatalapa, whose name means 'place where rivers are born', is a fourth generation 174 acre farm averaging 4,100 feet above sea level. It was founded in the late 1800's by Fidelia Lima, great grandmother of the current owner, Vickie Ann Dalton de Diaz. Vickie maintains 14 acres of virgin tropical forest and keeps her coffee plants shaded with over forty varieties of shades trees.\n\nThe steep slopes of Matalapa face the Pacific Ocean, to the south, which provide afternoon mists helpful in maintaining cooling moisture for the coffee trees.\nThis has been a small but excellent quality harvest year, and the cup is lively and sweet.\n\nSince winning in the 2003 El Salvador Cup of Excellence Matalapa has only gotten better."},
+          "TastingNotes": {"SS": ["Orange Zest", "Nougat", "Lime"]},
+          "Price": {"S": "17.50"},
+          "Url": {"S": "https://store.georgehowellcoffee.com/coffees/matalapa-el-salvador.html"},
+          "Status": {"S": "active"},
+          "CreatedAt": {"S": "2020-12-30T16:24:56.534263Z"},
+          "AdditionalDetails": {"M": {
+            "country":{"S": "El Salvador"},
+            "region": {"S": "La Libertad"},
+            "producer":	{"S": "Vickie Ann Dalton de Diaz"},
+            "farm":	{"S": "Matalapa"},
+            "farm_size": {"S": "173 acres"},
+            "altitude":	{"S": "4,100 - 4,600 feet"},
+            "varietals": {"S": "Pacas and Bourbon"},
+            "harvest":	{"S": "January 2019"},
+            "rainfall":	{"S": "86 - 98 inches per year"},
+            "soil":	{"S": "Clay Loam"},
+            "production_method": {"S": "washed"}
+          }}
+        }
+      }
+    }
+  ]
+}
