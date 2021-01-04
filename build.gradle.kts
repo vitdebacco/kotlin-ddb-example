@@ -5,6 +5,7 @@ val jacksonVersion: String by project
 val joobyVersion: String by project
 val jUnitVersion: String by project
 val kotlinVersion: String by project
+val restAssuredVersion: String by project
 
 plugins {
     application
@@ -39,14 +40,21 @@ dependencies {
     // The JSR310 dependency is required to properly serializing and deserializing Java 8 date & time objects
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion")
 
+    testImplementation("io.rest-assured:rest-assured:$restAssuredVersion")
+    testImplementation("io.rest-assured:kotlin-extensions:$restAssuredVersion")
     testImplementation(kotlin("test-junit5"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
     testImplementation("io.jooby:jooby-test:$joobyVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
 }
 
-tasks.test {
+tasks.withType<Test> {
     useJUnitPlatform()
+
+    // Show results for tests. Default behavior only reports failures.
+    testLogging {
+        events("passed", "skipped", "failed")
+    }
 }
 
 tasks.withType<KotlinCompile>() {

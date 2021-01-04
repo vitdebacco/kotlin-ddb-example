@@ -54,7 +54,7 @@ class OfferingRepository(private val client: DynamoDbClient) {
 
     fun findAllByOrigin(params: Map<String, String>): List<Offering> {
         val origin = params["origin_name"]
-            ?: throw StatusCodeException(StatusCode.BAD_REQUEST, "query param 'origin_name' is required")
+            ?: throw StatusCodeException(StatusCode.BAD_REQUEST, "param 'origin_name' is required")
 
         val roasterIdParam = params["roaster_id"] ?: ""
 
