@@ -39,7 +39,6 @@ class App : Kooby({
             offeringsRepository.findAllByOrigin(ctx.queryMap())
         }
     }
-
 })
 
 fun main(args: Array<String>) {

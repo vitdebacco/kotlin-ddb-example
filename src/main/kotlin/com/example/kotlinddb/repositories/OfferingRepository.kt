@@ -131,5 +131,4 @@ class OfferingRepository(private val client: DynamoDbClient) {
             } ?: emptyMap()
         )
     }
-
 }

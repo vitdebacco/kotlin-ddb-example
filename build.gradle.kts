@@ -12,6 +12,7 @@ plugins {
     kotlin("jvm") version "1.4.10"
     id("io.jooby.run") version "2.9.4"
     id("com.github.johnrengelman.shadow") version "5.2.0"
+    id("org.jmailen.kotlinter") version "3.3.0"
 }
 
 group = "me.vitdebacco"
