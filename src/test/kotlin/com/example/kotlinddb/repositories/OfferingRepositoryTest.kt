@@ -2,8 +2,9 @@ package com.example.kotlinddb.repositories
 
 import com.example.kotlinddb.App
 import com.example.kotlinddb.config.DynamoDBConfig
+import com.example.kotlinddb.exceptions.NotFoundException
+import com.example.kotlinddb.models.filters.OriginFilter
 import io.jooby.JoobyTest
-import io.jooby.exception.StatusCodeException
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -36,10 +37,9 @@ class OfferingRepositoryTest {
         }
 
         @Test
-        fun `throws StatusCodeException when roaster does not exist`() {
-            val e = assertThrows<StatusCodeException> { repository.findAllByRoaster("does-not-exist-coffee") }
+        fun `throws NotFoundException when roaster does not exist`() {
+            val e = assertThrows<NotFoundException> { repository.findAllByRoaster("does-not-exist-coffee") }
 
-            assertEquals(404, e.statusCode.value())
             assertEquals("roaster 'does-not-exist-coffee' not found", e.message)
         }
     }
@@ -49,17 +49,9 @@ class OfferingRepositoryTest {
 
         @Test
         fun `returns expected offerings`() {
-            val offerings = repository.findAllByOrigin(mapOf("origin_name" to "ecuador"))
+            val offerings = repository.findAllByOrigin(OriginFilter(originName = "ecuador"))
 
             assertEquals(2, offerings.size)
-        }
-
-        @Test
-        fun `origin_name param is required`() {
-            val e = assertThrows<StatusCodeException> { repository.findAllByOrigin(emptyMap()) }
-
-            assertEquals(400, e.statusCode.value())
-            assertEquals("param 'origin_name' is required", e.message)
         }
 
         @Nested
@@ -67,12 +59,12 @@ class OfferingRepositoryTest {
 
             @Test
             fun `returns expected offerings`() {
-                val params = mapOf(
-                    "origin_name" to "ecuador",
-                    "roaster_id" to "counter-culture-coffee"
+                val filter = OriginFilter(
+                    originName = "ecuador",
+                    roasterId = "counter-culture-coffee"
                 )
 
-                val offerings = repository.findAllByOrigin(params)
+                val offerings = repository.findAllByOrigin(filter)
 
                 assertEquals(1, offerings.size)
             }
