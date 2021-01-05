@@ -10,7 +10,6 @@ import software.amazon.awssdk.services.dynamodb.model.PutItemRequest
 import java.net.URL
 import java.time.Instant
 
-
 /*
     Helpful links
     https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.html
@@ -86,5 +85,4 @@ class RoasterRepository(
 
         val result = dynamoDBClient.putItem(request)
     }
-
 }

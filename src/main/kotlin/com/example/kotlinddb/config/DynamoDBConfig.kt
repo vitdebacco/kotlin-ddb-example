@@ -1,10 +1,8 @@
 package com.example.kotlinddb.config
 
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials
-import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider
-//import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient
-import software.amazon.awssdk.regions.Region
+// import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedClient
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient
 import java.net.URI
 
@@ -18,7 +16,7 @@ class DynamoDBConfig {
         .credentialsProvider(
             StaticCredentialsProvider.create(AwsBasicCredentials.create("key", "secret"))
         )
-            //AWSStaticCredentialsProvider(BasicAWSCredentials("key", "secret"))
+        // AWSStaticCredentialsProvider(BasicAWSCredentials("key", "secret"))
 //        .credentialsProvider(DefaultCredentialsProvider.builder().build())
         .build()
 
@@ -30,5 +28,4 @@ class DynamoDBConfig {
     fun client(): DynamoDbClient {
         return client
     }
-
 }
