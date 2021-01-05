@@ -2,6 +2,9 @@ package com.example.kotlinddb
 
 import com.example.kotlinddb.config.DynamoDBConfig
 import com.example.kotlinddb.config.JacksonConfig
+import com.example.kotlinddb.controllers.OfferingsController
+import com.example.kotlinddb.controllers.RoasterOfferingsController
+import com.example.kotlinddb.controllers.RoastersController
 import com.example.kotlinddb.repositories.OfferingRepository
 import com.example.kotlinddb.repositories.RoasterRepository
 import io.jooby.Kooby
@@ -20,24 +23,18 @@ class App : Kooby({
     logger.debug("DynamoDB tables: ${dynamoDBClient.listTables().tableNames()}")
     logger.debug("DynamoDB client initialized")
 
-    val roasterRepository = RoasterRepository(dynamoDBClient = dynamoDBClient)
+    val roasterRepository = RoasterRepository(client = dynamoDBClient)
     val offeringsRepository = OfferingRepository(client = dynamoDBClient)
+
+    val roastersController = RoastersController(roasterRepository)
+    val roasterOfferingsController = RoasterOfferingsController(offeringsRepository)
+    val offeringsController = OfferingsController(offeringsRepository)
 
     coroutine {
         get("/health_check") { AppStatus() }
-        get("/roasters/{id}") {
-            val roasterId = ctx.path("id").value()
-
-            roasterRepository.findById(roasterId)
-        }
-        get("/roasters/{id}/offerings") {
-            val roasterId = ctx.path("id").value()
-
-            offeringsRepository.findAllByRoaster(roasterId)
-        }
-        get("/offerings") {
-            offeringsRepository.findAllByOrigin(ctx.queryMap())
-        }
+        get("/roasters/{id}") { roastersController.show(ctx) }
+        get("/roasters/{id}/offerings") { roasterOfferingsController.index(ctx) }
+        get("/offerings") { offeringsController.index(ctx) }
     }
 })
 

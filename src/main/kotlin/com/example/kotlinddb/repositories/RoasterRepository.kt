@@ -1,12 +1,9 @@
 package com.example.kotlinddb.repositories
 
 import com.example.kotlinddb.models.data.Roaster
-import io.jooby.StatusCode
-import io.jooby.exception.StatusCodeException
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest
-import software.amazon.awssdk.services.dynamodb.model.PutItemRequest
 import java.net.URL
 import java.time.Instant
 
@@ -21,7 +18,7 @@ import java.time.Instant
  */
 
 class RoasterRepository(
-    private val dynamoDBClient: DynamoDbClient
+    private val client: DynamoDbClient
 ) {
 
     companion object {
@@ -31,7 +28,7 @@ class RoasterRepository(
         private const val ITEM_TYPE = "Roaster"
     }
 
-    fun findById(id: String): Roaster {
+    fun findById(id: String): Roaster? {
         val partitionKey = "$PARTITION_KEY$id"
         val sortKey = SORT_KEY
 
@@ -45,8 +42,8 @@ class RoasterRepository(
             .tableName(TABLE_NAME)
             .build()
 
-        val r = dynamoDBClient.getItem(request)
-        if (!r.hasItem()) throw StatusCodeException(StatusCode.NOT_FOUND, "roaster '$id' not found")
+        val r = client.getItem(request)
+        if (!r.hasItem()) return null
 
         return r.item().let {
             Roaster(
@@ -57,32 +54,5 @@ class RoasterRepository(
                 createdAt = Instant.parse(it["CreatedAt"]!!.s())
             )
         }
-    }
-
-    fun create() {
-        val roasterName = "Counter Culture Coffee"
-        val roasterId = roasterName.toLowerCase().replace(" ", "-")
-        val roasterUrl = "https://counterculturecoffee.com/"
-
-        val partitionKey = "$PARTITION_KEY$roasterId"
-        val sortKey = SORT_KEY
-
-        val request = PutItemRequest.builder()
-            .tableName(TABLE_NAME)
-            .item(
-                mapOf(
-                    "PartitionKey" to AttributeValue.builder().s(partitionKey).build(),
-                    "SortKey" to AttributeValue.builder().s(sortKey).build(),
-                    "ItemType" to AttributeValue.builder().s(ITEM_TYPE).build(),
-                    "Id" to AttributeValue.builder().s(roasterId).build(),
-                    "Name" to AttributeValue.builder().s(roasterName).build(),
-                    "Url" to AttributeValue.builder().s(roasterUrl).build(),
-                    "Status" to AttributeValue.builder().s("active").build(),
-                    "CreatedAt" to AttributeValue.builder().s(Instant.now().toString()).build()
-                )
-            )
-            .build()
-
-        val result = dynamoDBClient.putItem(request)
     }
 }

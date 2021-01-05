@@ -1,8 +1,8 @@
 package com.example.kotlinddb.repositories
 
+import com.example.kotlinddb.exceptions.NotFoundException
 import com.example.kotlinddb.models.data.Offering
-import io.jooby.StatusCode
-import io.jooby.exception.StatusCodeException
+import com.example.kotlinddb.models.filters.OriginFilter
 import org.slf4j.LoggerFactory
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue
@@ -43,7 +43,7 @@ class OfferingRepository(private val client: DynamoDbClient) {
         logger.debug("query returned ${resp.count()} items")
 
         val respItems = resp.items()
-        if (respItems.isEmpty()) throw StatusCodeException(StatusCode.NOT_FOUND, "roaster '$roasterId' not found")
+        if (respItems.isEmpty()) throw NotFoundException("roaster '$roasterId' not found")
 
         // pull the roaster from the response items map
         val roaster = transformRoaster(respItems.first())
@@ -52,11 +52,10 @@ class OfferingRepository(private val client: DynamoDbClient) {
         return respItems.subList(1, respItems.size).map { transformOffering(it, roaster) }
     }
 
-    fun findAllByOrigin(params: Map<String, String>): List<Offering> {
-        val origin = params["origin_name"]
-            ?: throw StatusCodeException(StatusCode.BAD_REQUEST, "param 'origin_name' is required")
+    fun findAllByOrigin(originFilter: OriginFilter): List<Offering> {
+        val origin = originFilter.originName
 
-        val roasterIdParam = params["roaster_id"] ?: ""
+        val roasterIdParam = originFilter.roasterId ?: ""
 
         val gsi1PK = "ORIGIN#$origin"
         val gsi1SK = "ROASTER#$roasterIdParam"

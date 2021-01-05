@@ -5,6 +5,7 @@ val jacksonVersion: String by project
 val joobyVersion: String by project
 val jUnitVersion: String by project
 val kotlinVersion: String by project
+val mockkVersion: String by project
 val restAssuredVersion: String by project
 
 plugins {
@@ -46,6 +47,7 @@ dependencies {
     testImplementation(kotlin("test-junit5"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
     testImplementation("io.jooby:jooby-test:$joobyVersion")
+    testImplementation("io.mockk:mockk:$mockkVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
 }
 
