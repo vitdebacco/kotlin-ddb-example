@@ -5,23 +5,23 @@ import com.example.kotlinddb.config.JacksonConfig
 import com.example.kotlinddb.controllers.OfferingsController
 import com.example.kotlinddb.controllers.RoasterOfferingsController
 import com.example.kotlinddb.controllers.RoastersController
+import com.example.kotlinddb.modules.DynamoDBModule
 import com.example.kotlinddb.repositories.OfferingRepository
 import com.example.kotlinddb.repositories.RoasterRepository
 import io.jooby.Kooby
 import io.jooby.json.JacksonModule
 import io.jooby.runApp
 import org.slf4j.LoggerFactory
+import software.amazon.awssdk.services.dynamodb.DynamoDbClient
 
 class App : Kooby({
 
     val logger = LoggerFactory.getLogger(javaClass)
 
     install(JacksonModule(JacksonConfig().objectMapper()))
+    install(DynamoDBModule(DynamoDBConfig().client()))
 
-    logger.debug("initializing DynamoDB client")
-    val dynamoDBClient = DynamoDBConfig().client()
-    logger.debug("DynamoDB tables: ${dynamoDBClient.listTables().tableNames()}")
-    logger.debug("DynamoDB client initialized")
+    val dynamoDBClient = require(DynamoDbClient::class.java)
 
     val roasterRepository = RoasterRepository(client = dynamoDBClient)
     val offeringsRepository = OfferingRepository(client = dynamoDBClient)
