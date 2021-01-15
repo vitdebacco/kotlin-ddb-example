@@ -21,15 +21,8 @@ This app provides a basic proof of concept for working with DynamoDB using Kotli
     - including the `inMemory` flag ensures that the DB will not be persisted to disk. Useful for tests and tweaking the model, but 
       may not be ideal for playing with the app itself.
   - Or use the provided `docker-compose.yml` (currently only contains DynamoDB dependency)
-- Create `Coffee` Table (You may need to configure AWS client)
-  - `aws dynamodb create-table --cli-input-json file://./src/main/resources/Coffee-Table.json --endpoint-url http://localhost:8000`
-- Create Sample Data
-  - Roasters
-    - `aws dynamodb batch-write-item --request-items file://./src/main/resources/Roasters.json --endpoint-url http://localhost:8000`
-  - Offerings
-    - `aws dynamodb batch-write-item --request-items file://./src/main/resources/Offerings-CounterCulture.json --endpoint-url http://localhost:8000`
-    - `aws dynamodb batch-write-item --request-items file://./src/main/resources/Offerings-LittleWolf.json --endpoint-url http://localhost:8000`
-    - `aws dynamodb batch-write-item --request-items file://./src/main/resources/Offerings-GeorgeHowell.json --endpoint-url http://localhost:8000`
+- Run script to initialize DB and create sample data
+  - `./data/init_db.sh`
 - Start the App
   - `./gradlew joobyRun`
 - Query the API!
