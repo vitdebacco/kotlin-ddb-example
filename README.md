@@ -35,15 +35,24 @@ This app provides a basic proof of concept for working with DynamoDB using Kotli
 - Retrieve Offerings by Origin, Roaster
   - `curl 'http://localhost:8080/offerings?origin_name=ecuador' -H 'accept: application/json' | jq`
   - `curl 'http://localhost:8080/offerings?origin_name=ecuador&roaster_id=counter-culture-coffee' -H 'accept: application/json' | jq`
+- Create a Roaster
+  - `curl 'http://localhost:8080/roasters' -X POST -d '{ "name": "New Roaster", "url": "https://www.newroaster.com", "status": "active" }' -H 'Accept: application/json' -H 'Content-Type: application/json' | jq`
+- Update a Roaster
+  - `curl 'http://localhost:8080/roasters/new-roaster' -X PUT -d '{ "name": "New Roaster Coffee", "url": "https://www.newroaster.coffee", "status": "test" }' -H 'Accept: application/json' -H 'Content-Type: application/json' | jq`
+  - `curl 'http://localhost:8080/roasters/new-roaster' -X PUT -d '{ "status": "disabled" }' -H 'Accept: application/json' -H 'Content-Type: application/json' | jq`
+- Delete a Roaster
+  - `curl 'http://localhost:8080/roasters/new-roaster' -X DELETE -H 'Accept: application/json' -H 'Content-Type: application/json' | jq`
 
 ### About the Data Model
 Coming soon!
 
-### TODOs
+### TODOs/Shortcomings to Document
 - Document code
 - Refactor/code cleanup
 - More refactoring. Actually structure the code.
+- Tests that don't rely on sample data 
 - SO MANY BAD USES OF `!!` :(
 - Complete `docker-compose.yml` to include app build
 - Is there a way to model the full roaster into the offerings by origin GSI without embedding it?
 - Offering model price is oversimplified. Also missing quantity.
+- Lack of validation
