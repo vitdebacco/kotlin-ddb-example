@@ -33,6 +33,9 @@ class App : Kooby({
     coroutine {
         get("/health_check") { AppStatus() }
         get("/roasters/{id}") { roastersController.show(ctx) }
+        post("/roasters") { roastersController.create(ctx) }
+        put("/roasters/{id}") { roastersController.update(ctx) }
+        delete("/roasters/{id}") { roastersController.delete(ctx) }
         get("/roasters/{id}/offerings") { roasterOfferingsController.index(ctx) }
         get("/offerings") { offeringsController.index(ctx) }
     }
