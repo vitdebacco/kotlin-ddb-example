@@ -3,8 +3,8 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#counter-culture-coffee"},
-          "SortKey": {"S": "#INFO"},
+          "PK": {"S": "ROASTER#counter-culture-coffee"},
+          "SK": {"S": "#INFO"},
           "ItemType": {"S": "Roaster"},
           "Id": {"S": "counter-culture-coffee"},
           "Name": {"S": "Counter Culture Coffee"},
@@ -17,8 +17,8 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
-          "SortKey": {"S": "#INFO"},
+          "PK": {"S": "ROASTER#little-wolf-coffee"},
+          "SK": {"S": "#INFO"},
           "ItemType": {"S": "Roaster"},
           "Id": {"S": "little-wolf-coffee"},
           "Name": {"S": "Little Wolf Coffee"},
@@ -31,8 +31,8 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#little-waves-coffee"},
-          "SortKey": {"S": "#INFO"},
+          "PK": {"S": "ROASTER#little-waves-coffee"},
+          "SK": {"S": "#INFO"},
           "ItemType": {"S": "Roaster"},
           "Id": {"S": "little-waves-coffee"},
           "Name": {"S": "Little Waves Coffee Roasters"},
@@ -45,8 +45,8 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#olympia-coffee"},
-          "SortKey": {"S": "#INFO"},
+          "PK": {"S": "ROASTER#olympia-coffee"},
+          "SK": {"S": "#INFO"},
           "ItemType": {"S": "Roaster"},
           "Id": {"S": "olympia-coffee"},
           "Name": {"S": "Olympia Coffee"},
@@ -59,8 +59,8 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#madcap-coffee"},
-          "SortKey": {"S": "#INFO"},
+          "PK": {"S": "ROASTER#madcap-coffee"},
+          "SK": {"S": "#INFO"},
           "ItemType": {"S": "Roaster"},
           "Id": {"S": "madcap-coffee"},
           "Name": {"S": "Madcap Coffee Company"},
@@ -73,8 +73,8 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
-          "SortKey": {"S": "#INFO"},
+          "PK": {"S": "ROASTER#george-howell-coffee"},
+          "SK": {"S": "#INFO"},
           "ItemType": {"S": "Roaster"},
           "Id": {"S": "george-howell-coffee"},
           "Name": {"S": "George Howell Coffee"},
@@ -87,8 +87,8 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#scratch-living"},
-          "SortKey": {"S": "#INFO"},
+          "PK": {"S": "ROASTER#scratch-living"},
+          "SK": {"S": "#INFO"},
           "ItemType": {"S": "Roaster"},
           "Id": {"S": "scratch-living"},
           "Name": {"S": "Scratch Living"},

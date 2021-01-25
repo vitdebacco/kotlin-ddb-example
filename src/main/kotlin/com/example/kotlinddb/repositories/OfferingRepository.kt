@@ -30,7 +30,7 @@ class OfferingRepository(private val client: DynamoDbClient) {
         logger.debug("retrieving offerings for $partitionKey")
 
         val req = QueryRequest.builder().tableName(TABLE_NAME)
-            .keyConditionExpression("PartitionKey = :partitionKey")
+            .keyConditionExpression("PK = :partitionKey")
             .expressionAttributeValues(
                 mapOf(
                     ":partitionKey" to AttributeValue.builder().s(partitionKey).build()
@@ -63,10 +63,10 @@ class OfferingRepository(private val client: DynamoDbClient) {
 
         val expressionAttrValues = mutableMapOf(":gsi1PK" to AttributeValue.builder().s(gsi1PK).build())
         val expression = if (roasterIdParam.isBlank()) {
-            "GSI1PartitionKey = :gsi1PK"
+            "GSI1PK = :gsi1PK"
         } else {
             expressionAttrValues[":gsi1SK"] = AttributeValue.builder().s(gsi1SK).build()
-            "GSI1PartitionKey = :gsi1PK AND begins_with(GSI1SortKey, :gsi1SK)"
+            "GSI1PK = :gsi1PK AND begins_with(GSI1SK, :gsi1SK)"
         }
 
         logger.debug("number of exprAttrValues keys: ${expressionAttrValues.keys.size}")
@@ -86,7 +86,7 @@ class OfferingRepository(private val client: DynamoDbClient) {
         if (respItems.isEmpty()) return emptyList()
 
         // pull the roaster ID from the sort key
-        val sortKey = respItems.first()["GSI1SortKey"]?.s()!!.split("|").associate {
+        val sortKey = respItems.first()["GSI1SK"]?.s()!!.split("|").associate {
             val (left, right) = it.split("#")
             left.toLowerCase() to right
         }

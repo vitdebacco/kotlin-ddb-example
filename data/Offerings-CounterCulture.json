@@ -3,10 +3,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#counter-culture-coffee"},
-          "SortKey": {"S": "OFFERING#iridescent"},
-          "GSI1PartitionKey": {"S": "ORIGIN#various"},
-          "GSI1SortKey": {"S": "ROASTER#counter-culture-coffee|OFFERING#iridescent"},
+          "PK": {"S": "ROASTER#counter-culture-coffee"},
+          "SK": {"S": "OFFERING#iridescent"},
+          "GSI1PK": {"S": "ORIGIN#various"},
+          "GSI1SK": {"S": "ROASTER#counter-culture-coffee|OFFERING#iridescent"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "iridescent"},
           "Name": {"S": "Iridescent"},
@@ -28,10 +28,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#counter-culture-coffee"},
-          "SortKey": {"S": "OFFERING#abel-salinas"},
-          "GSI1PartitionKey": {"S": "ORIGIN#ecuador"},
-          "GSI1SortKey": {"S": "ROASTER#counter-culture-coffee|OFFERING#abel-salinas"},
+          "PK": {"S": "ROASTER#counter-culture-coffee"},
+          "SK": {"S": "OFFERING#abel-salinas"},
+          "GSI1PK": {"S": "ORIGIN#ecuador"},
+          "GSI1SK": {"S": "ROASTER#counter-culture-coffee|OFFERING#abel-salinas"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "abel-salinas"},
           "Name": {"S": "Abel Salinas"},
@@ -54,10 +54,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#counter-culture-coffee"},
-          "SortKey": {"S": "OFFERING#muda"},
-          "GSI1PartitionKey": {"S": "ORIGIN#ethiopia"},
-          "GSI1SortKey": {"S": "ROASTER#counter-culture-coffee|OFFERING#muda"},
+          "PK": {"S": "ROASTER#counter-culture-coffee"},
+          "SK": {"S": "OFFERING#muda"},
+          "GSI1PK": {"S": "ORIGIN#ethiopia"},
+          "GSI1SK": {"S": "ROASTER#counter-culture-coffee|OFFERING#muda"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "muda"},
           "Name": {"S": "Muda"},

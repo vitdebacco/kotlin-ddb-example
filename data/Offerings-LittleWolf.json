@@ -3,10 +3,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
-          "SortKey": {"S": "OFFERING#companion-blend"},
-          "GSI1PartitionKey": {"S": "ORIGIN#various"},
-          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#companion-blend"},
+          "PK": {"S": "ROASTER#little-wolf-coffee"},
+          "SK": {"S": "OFFERING#companion-blend"},
+          "GSI1PK": {"S": "ORIGIN#various"},
+          "GSI1SK": {"S": "ROASTER#little-wolf-coffee|OFFERING#companion-blend"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "companion-blend"},
           "Name": {"S": "Companion Blend"},
@@ -26,10 +26,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
-          "SortKey": {"S": "OFFERING#la-pradera-gesha"},
-          "GSI1PartitionKey": {"S": "ORIGIN#colombia"},
-          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#la-pradera-gesha"},
+          "PK": {"S": "ROASTER#little-wolf-coffee"},
+          "SK": {"S": "OFFERING#la-pradera-gesha"},
+          "GSI1PK": {"S": "ORIGIN#colombia"},
+          "GSI1SK": {"S": "ROASTER#little-wolf-coffee|OFFERING#la-pradera-gesha"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "la-pradera-gesha"},
           "Name": {"S": "La Pradera - Gesha"},
@@ -53,10 +53,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
-          "SortKey": {"S": "OFFERING#demeka-becha-honey"},
-          "GSI1PartitionKey": {"S": "ORIGIN#ethiopia"},
-          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#demeka-becha-honey"},
+          "PK": {"S": "ROASTER#little-wolf-coffee"},
+          "SK": {"S": "OFFERING#demeka-becha-honey"},
+          "GSI1PK": {"S": "ORIGIN#ethiopia"},
+          "GSI1SK": {"S": "ROASTER#little-wolf-coffee|OFFERING#demeka-becha-honey"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "demeka-becha-honey"},
           "Name": {"S": "Demeka Becha - Honey"},
@@ -80,10 +80,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
-          "SortKey": {"S": "OFFERING#oropel"},
-          "GSI1PartitionKey": {"S": "ORIGIN#peru"},
-          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#oropel"},
+          "PK": {"S": "ROASTER#little-wolf-coffee"},
+          "SK": {"S": "OFFERING#oropel"},
+          "GSI1PK": {"S": "ORIGIN#peru"},
+          "GSI1SK": {"S": "ROASTER#little-wolf-coffee|OFFERING#oropel"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "oropel"},
           "Name": {"S": "Oropel"},
@@ -107,10 +107,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#little-wolf-coffee"},
-          "SortKey": {"S": "OFFERING#lugmpata-honey"},
-          "GSI1PartitionKey": {"S": "ORIGIN#ecuador"},
-          "GSI1SortKey": {"S": "ROASTER#little-wolf-coffee|OFFERING#lugmpata-honey"},
+          "PK": {"S": "ROASTER#little-wolf-coffee"},
+          "SK": {"S": "OFFERING#lugmpata-honey"},
+          "GSI1PK": {"S": "ORIGIN#ecuador"},
+          "GSI1SK": {"S": "ROASTER#little-wolf-coffee|OFFERING#lugmpata-honey"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "lugmpata-honey"},
           "Name": {"S": "Lugmpata - Honey"},

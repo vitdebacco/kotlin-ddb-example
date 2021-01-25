@@ -41,8 +41,8 @@ class RoasterRepository(
         val request = GetItemRequest.builder()
             .key(
                 mapOf(
-                    "PartitionKey" to AttributeValue.builder().s(partitionKey).build(),
-                    "SortKey" to AttributeValue.builder().s(sortKey).build()
+                    "PK" to AttributeValue.builder().s(partitionKey).build(),
+                    "SK" to AttributeValue.builder().s(sortKey).build()
                 )
             )
             .tableName(TABLE_NAME)
@@ -80,8 +80,8 @@ class RoasterRepository(
             .tableName(TABLE_NAME)
             .item(
                 mapOf(
-                    "PartitionKey" to AttributeValue.builder().s(partitionKey).build(),
-                    "SortKey" to AttributeValue.builder().s(sortKey).build(),
+                    "PK" to AttributeValue.builder().s(partitionKey).build(),
+                    "SK" to AttributeValue.builder().s(sortKey).build(),
                     "ItemType" to AttributeValue.builder().s(ITEM_TYPE).build(),
                     "Id" to AttributeValue.builder().s(roaster.id).build(),
                     "Name" to AttributeValue.builder().s(roaster.name).build(),
@@ -90,7 +90,7 @@ class RoasterRepository(
                     "CreatedAt" to AttributeValue.builder().s(roaster.createdAt.toString()).build()
                 )
             )
-            .conditionExpression("attribute_not_exists(PartitionKey)")
+            .conditionExpression("attribute_not_exists(PK)")
             .build()
 
         client.putItem(request)
@@ -104,14 +104,14 @@ class RoasterRepository(
 
         val updates = toAttributeValueUpdate(updateRequest)
 
-        // Investigate using `conditionExpression("attribute_exists(PartitionKey)")` to validate the existence of the
+        // Investigate using `conditionExpression("attribute_exists(PK)")` to validate the existence of the
         // item we are attempting to update. It seems this may not be possible along with `attributeUpdates`.
         val request = UpdateItemRequest.builder()
             .tableName(TABLE_NAME)
             .key(
                 mapOf(
-                    "PartitionKey" to AttributeValue.builder().s(partitionKey).build(),
-                    "SortKey" to AttributeValue.builder().s(sortKey).build()
+                    "PK" to AttributeValue.builder().s(partitionKey).build(),
+                    "SK" to AttributeValue.builder().s(sortKey).build()
                 )
             )
             .attributeUpdates(updates)
@@ -128,11 +128,11 @@ class RoasterRepository(
             .tableName(TABLE_NAME)
             .key(
                 mapOf(
-                    "PartitionKey" to AttributeValue.builder().s(partitionKey).build(),
-                    "SortKey" to AttributeValue.builder().s(sortKey).build()
+                    "PK" to AttributeValue.builder().s(partitionKey).build(),
+                    "SK" to AttributeValue.builder().s(sortKey).build()
                 )
             )
-            .conditionExpression("attribute_exists(PartitionKey)")
+            .conditionExpression("attribute_exists(PK)")
             .build()
 
         client.deleteItem(request)
