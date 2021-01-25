@@ -2,29 +2,29 @@
   "TableName": "Coffee",
   "AttributeDefinitions": [
     {
-      "AttributeName": "PartitionKey",
+      "AttributeName": "PK",
       "AttributeType": "S"
     },
     {
-      "AttributeName": "SortKey",
+      "AttributeName": "SK",
       "AttributeType": "S"
     },
     {
-      "AttributeName": "GSI1PartitionKey",
+      "AttributeName": "GSI1PK",
       "AttributeType": "S"
     },
     {
-      "AttributeName": "GSI1SortKey",
+      "AttributeName": "GSI1SK",
       "AttributeType": "S"
     }
   ],
   "KeySchema": [
     {
-      "AttributeName": "PartitionKey",
+      "AttributeName": "PK",
       "KeyType": "HASH"
     },
     {
-      "AttributeName": "SortKey",
+      "AttributeName": "SK",
       "KeyType": "RANGE"
     }
   ],
@@ -44,11 +44,11 @@
       },
       "KeySchema": [
         {
-          "AttributeName": "GSI1PartitionKey",
+          "AttributeName": "GSI1PK",
           "KeyType": "HASH"
         },
         {
-          "AttributeName": "GSI1SortKey",
+          "AttributeName": "GSI1SK",
           "KeyType": "RANGE"
         }
       ]

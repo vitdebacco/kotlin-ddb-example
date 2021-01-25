@@ -3,10 +3,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
-          "SortKey": {"S": "OFFERING#yukro-cooperative-ethiopia"},
-          "GSI1PartitionKey": {"S": "ORIGIN#ethiopia"},
-          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#yukro-cooperative-ethiopia"},
+          "PK": {"S": "ROASTER#george-howell-coffee"},
+          "SK": {"S": "OFFERING#yukro-cooperative-ethiopia"},
+          "GSI1PK": {"S": "ORIGIN#ethiopia"},
+          "GSI1SK": {"S": "ROASTER#george-howell-coffee|OFFERING#yukro-cooperative-ethiopia"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "yukro-cooperative-ethiopia"},
           "Name": {"S": "Yukro Co-Op"},
@@ -36,10 +36,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
-          "SortKey": {"S": "OFFERING#gesha-village"},
-          "GSI1PartitionKey": {"S": "ORIGIN#ethiopia"},
-          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#gesha-village"},
+          "PK": {"S": "ROASTER#george-howell-coffee"},
+          "SK": {"S": "OFFERING#gesha-village"},
+          "GSI1PK": {"S": "ORIGIN#ethiopia"},
+          "GSI1SK": {"S": "ROASTER#george-howell-coffee|OFFERING#gesha-village"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "gesha-village"},
           "Name": {"S": "Gesha Village Estate"},
@@ -64,10 +64,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
-          "SortKey": {"S": "OFFERING#el-injerto-gesha"},
-          "GSI1PartitionKey": {"S": "ORIGIN#guatemala"},
-          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#el-injerto-gesha"},
+          "PK": {"S": "ROASTER#george-howell-coffee"},
+          "SK": {"S": "OFFERING#el-injerto-gesha"},
+          "GSI1PK": {"S": "ORIGIN#guatemala"},
+          "GSI1SK": {"S": "ROASTER#george-howell-coffee|OFFERING#el-injerto-gesha"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "el-injerto-gesha"},
           "Name": {"S": "El Injerto Gesha"},
@@ -94,10 +94,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
-          "SortKey": {"S": "OFFERING#piedras-de-afilar-gesha"},
-          "GSI1PartitionKey": {"S": "ORIGIN#colombia"},
-          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#piedras-de-afilar-gesha"},
+          "PK": {"S": "ROASTER#george-howell-coffee"},
+          "SK": {"S": "OFFERING#piedras-de-afilar-gesha"},
+          "GSI1PK": {"S": "ORIGIN#colombia"},
+          "GSI1SK": {"S": "ROASTER#george-howell-coffee|OFFERING#piedras-de-afilar-gesha"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "piedras-de-afilar-gesha"},
           "Name": {"S": "Piedras de Afilar Gesha"},
@@ -124,10 +124,10 @@
     {
       "PutRequest": {
         "Item": {
-          "PartitionKey": {"S": "ROASTER#george-howell-coffee"},
-          "SortKey": {"S": "OFFERING#matalapa-el-salvador"},
-          "GSI1PartitionKey": {"S": "ORIGIN#el-salvador"},
-          "GSI1SortKey": {"S": "ROASTER#george-howell-coffee|OFFERING#matalapa-el-salvador"},
+          "PK": {"S": "ROASTER#george-howell-coffee"},
+          "SK": {"S": "OFFERING#matalapa-el-salvador"},
+          "GSI1PK": {"S": "ORIGIN#el-salvador"},
+          "GSI1SK": {"S": "ROASTER#george-howell-coffee|OFFERING#matalapa-el-salvador"},
           "ItemType": {"S": "Offering"},
           "Id": {"S": "matalapa-el-salvador"},
           "Name": {"S": "Matalapa"},
